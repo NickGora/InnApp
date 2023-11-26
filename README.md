@@ -31,3 +31,6 @@ train.csv                                   -  file with training data
 
 ***ALERT
 *.csv files generated during project could not be uploaded due to hughe size (~300-1500MB) 
+
+***ALERT
+.gitignore is just template. There is nothing to hide for me (no key, cert, etc)
