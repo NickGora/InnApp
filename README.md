@@ -30,4 +30,4 @@ model.pkl                                   -  pickle file with save model
 train.csv                                   -  file with training data
 
 ***ALERT
-*.csv files generated during project could not be downloaded due to hughe size (~300-1500MB) 
+*.csv files generated during project could not be uploaded due to hughe size (~300-1500MB) 
