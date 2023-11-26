@@ -28,3 +28,6 @@ app.py                                      -  scrip of window app named "InnApp
 model.pkl                                   -  pickle file with save model
 
 train.csv                                   -  file with training data
+
+***ALERT
+*.csv files generated during project could not be downloaded due to hughe size (~300-1500MB) 
