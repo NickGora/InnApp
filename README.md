@@ -34,3 +34,6 @@ train.csv                                   -  file with training data
 
 ***ALERT
 .gitignore is just template. There is nothing to hide for me (no key, cert, etc)
+
+***ALERT
+YandexSpeller() requers Internet connection
