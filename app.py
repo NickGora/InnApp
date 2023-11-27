@@ -12,7 +12,9 @@ from pyaspeller import YandexSpeller
 import sys
 import pathlib
 if getattr(sys, 'frozen', False) and hasattr(sys, '_MEIPASS'):
-    os.environ["PYMORPHY2_DICT_PATH"] = str(pathlib.Path('C:/Users/user/AppData/Local/Programs/Python/Python38/Lib/site-packages/pymorphy2_dicts_ru/data'))
+    home_directory = pathlib.Path.home()
+    path = str(pathlib.Path('C:/Users/user/AppData/Local/Programs/Python/Python38/Lib/site-packages/pymorphy2_dicts_ru/data'))
+    os.environ["PYMORPHY2_DICT_PATH"] = path
 
 from pymorphy2 import MorphAnalyzer
 from nltk.corpus import stopwords
@@ -81,14 +83,14 @@ class Window(tk.Tk):
         self.label = tk.Label(self, 
                               text='Label', 
                               textvariable=self.label_var, 
-                              font=self.text_size_config)
+                              font=('Times', self.text_size_config))
         self.entry = tk.Entry(self, 
                               textvariable=self.entry_var, 
-                              font=self.text_size_config)
+                              font=('Times', self.text_size_config))
         self.buttom = tk.Button(self, 
                                 text='Predict', 
                                 command=self._buttom_func, 
-                                font=self.text_size_config)
+                                font=('Times', self.text_size_config))
 
     # method to place widgets on window
     def _place_widgets(self) -> None:
