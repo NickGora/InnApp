@@ -5,6 +5,8 @@ import pandas as pd
 
 import numpy as np
 
+import re
+
 from pymorphy2 import MorphAnalyzer
 
 from pyaspeller import YandexSpeller
@@ -28,8 +30,6 @@ labels = dict((x,y) for x,y in zip(df['label'].unique(), np.arange(len(df['label
 df['label'] = df['label'].map(labels)
 
 # func to preprocess texts
-SYMBOLS = "'';:.,\[]{}<>?/!@#$%^&*()_+=-»«"
-
 corrector = YandexSpeller()
 
 lemmatizer = MorphAnalyzer()
@@ -39,9 +39,9 @@ stopwords = stopwords.words("russian")
 
 def preprocess_text(line: str) -> str:
     clean_line = ''
+    line = str(line).lower()
+    line = re.sub('[^а-яa-z]+', ' ', line)
     for word in str(line).split():
-        word = word.lower()
-        word = word.strip(SYMBOLS)
         word = corrector.spelled(word)
         word = lemmatizer.parse(word)[0].normal_form
         if word not in stopwords:
